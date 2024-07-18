@@ -1,0 +1,22 @@
+{
+  "name": "job-task",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1",
+      "myJson": "json-server --watch db.json"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.6"
+  },
+  "dependencies": {
+    "json-server": "^1.0.0-beta.1",
+    "@fortawesome/fontawesome-free": "^6.5.2",
+    "chart.js": "^4.4.3",
+    "jquery": "^3.7.1"
+  }
+}

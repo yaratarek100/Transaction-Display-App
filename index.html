@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="./src/dist/output.css" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Transactions Table</h1>
+    <table class=" bg-red-300  p-5 m-auto ">
+      <thead class="p-44 ">
+        <th>Customer Name</th>
+        <th>Date</th>
+        <th>Amount</th>
+      </thead>
+      <tbody>
+        
+      
+      </tbody>
+    </table>
+
+    <div >
+      <input id="customer-input" class="border" type="text" name="customer-name" >
+      <input id="min"            class="border"  type="number" name="min-amount" step="25" min="0">
+      <input id="max"            class="border" type="number" name="max-amount" step="25" max="1000000">
+    </div>
+    
+          <div>
+            <canvas id="myChart"></canvas>
+          </div>
+
+    <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="./src/js/script.js" type="module"></script>
+  </body>
+</html>
+
+<!--  bg-slate-100 md:bg-orange-100 lg:bg-teal-200 xl:bg-sky-600 2xl:bg-yellow-200  sm:bg-red-600 -->
