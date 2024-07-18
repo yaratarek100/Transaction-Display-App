@@ -1,8 +1,10 @@
 import { newTransactionsData } from "./myTable.js";
-const ctx = document.getElementById('myChart');
+const ctx = document.getElementById('myChart').getContext('2d');
+let currentChart = null; 
 
 
 export function setChart(customerId,customerName){
+  
   let dateList=[];
   let amountList=[];
 

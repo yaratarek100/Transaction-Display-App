@@ -4,7 +4,6 @@ import { filterTable, baseTable } from "./modules/myTable.js";
 let customerInput = document.querySelector("#customer-input");
 let minAmount = document.querySelector("#min");
 let maxAmount = document.querySelector("#max");
-let tr = document.querySelectorall("tr");
 
 async function fetchData(url) {
   try {
@@ -45,11 +44,9 @@ maxAmount.addEventListener("input",()=>{
   filterTable (minAmount.value,maxAmount.value,customerInput.value)
 })
 
-tr.forEach(row => {
-  
-  row.addEventListener("click",(e)=>{
-    let c-id = e.target.id
-});
+
+
+
 
 
   main();

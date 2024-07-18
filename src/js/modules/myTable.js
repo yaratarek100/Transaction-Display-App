@@ -1,3 +1,5 @@
+import { setChart } from "./myChat.js";
+
 const tableBody = document.querySelector("tbody");
 
 export let newTransactionsData = [];
@@ -8,14 +10,18 @@ export function fillTable(customerTransactions) {
   customerTransactions.forEach((transaction) => {
     let newRow = document.createElement("tr");
     newRow.classList.add("border");
+    newRow.id =(`${transaction.customer_id}`);
     newRow.innerHTML = `
         <td class="py-3 px-12 pl-16">${transaction.id}</td>
         <td class="py-3 px-12">${transaction.customer_name}</td>
                     <td class="py-3 px-12">${transaction.date}</td>
                     <td class="py-3 px-12 pr-16">${transaction.amount}</td>`;
     tableBody.appendChild(newRow);
+
+    newRow.addEventListener("click",()=>{
+      setChart(transaction.customer_id)
   });
-}
+})}
 
 export function baseTable(customersData, transactionsData) {
   transactionsData.forEach((transaction) => {

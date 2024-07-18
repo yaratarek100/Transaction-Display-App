@@ -584,10 +584,6 @@ video {
   width: 50%;
 }
 
-.w-2\/3 {
-  width: 66.666667%;
-}
-
 .w-min {
   width: -moz-min-content;
   width: min-content;
@@ -703,6 +699,10 @@ video {
 
 td,th{
   white-space: nowrap;
+}
+
+tr{
+  cursor: pointer;
 }
 
 .placeholder\:text-slate-200::-moz-placeholder {

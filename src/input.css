@@ -5,3 +5,7 @@
 td,th{
     white-space: nowrap;
 }
+
+tr{
+    cursor: pointer;
+}
