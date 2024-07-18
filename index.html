@@ -5,50 +5,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link href="./src/dist/output.css" rel="stylesheet" />
-    <link href="./src/dist/style.css" rel="stylesheet" />
+    <link href="./node_modules/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet" />
   </head>
-  <body>
+ 
+ <body class="bg-purple-100">
   
  
 
-      <div class="for-display bg-purple-100  flex justify-center items-center min-h-screen">
-        <div class="table-box w-1/2">
-          <h1 class="text-3xl my-6 ">Transactions History :</h1>
+    <div class="cont w-11/12 mx-auto relative flex-col justify-center items-center">
+      
+      <h1 class="text-3xl my-6 ">Transactions History :</h1>
+      <div class="">
+        <div class="c-name ">
+          <label for="customer-name" class="text-slate-500">filter By Name :</label>
+        <input
+        placeholder="customer name"
+          id="customer-input"
+          class=" placeholder:text-slate-200 rounded-md border-purple-400 px-2 border"
+          type="text"
+          name="customer-name"
+        />
+        </div>
+        <div class="amount ">
           
-
-          <div class="mx-auto">
-            <div class="c-name">
-              <label for="customer-name" class="text-slate-500">filter By Name :</label>
+          <label for="customer-name" class="text-slate-500">filter By Amount :</label>
             <input
-            placeholder="customer name"
-              id="customer-input"
-              class=" placeholder:text-slate-200 rounded-md border-purple-400 px-2 border"
-              type="text"
-              name="customer-name"
-            />
-            </div>
-            <div class="amount">
-              
-              <label for="customer-name" class="text-slate-500">filter By Amount :</label>
-                <input
-                placeholder="min"
-              id="min"
-              class="border placeholder:text-slate-200 rounded-md border-purple-400 px-2 "
-              type="number"
-              name="min-amount"
-              min=""
-            />
-            <input
-            placeholder="max"
-              id="max"
-              class="border placeholder:text-slate-200 rounded-md border-purple-400 px-2 "
-              type="number"
-              name="max-amount"
-              max=""
-            />
-            </div>
-          
-          </div>
+            placeholder="min"
+          id="min"
+          class="border placeholder:text-slate-200 rounded-md border-purple-400 px-2 "
+          type="number"
+          name="min-amount"
+          min=""
+        />
+        <input
+        placeholder="max"
+          id="max"
+          class="border placeholder:text-slate-200 rounded-md border-purple-400 px-2 "
+          type="number"
+          name="max-amount"
+          max=""
+        />
+        </div>
+      
+      </div>
+      
           <div
             class="table-div border mx-auto border-purple-700 overflow-hidden w-min rounded-2xl mt-3 "
           >
@@ -59,20 +59,22 @@
                 <th class="pb-3 p-3">Date</th>
                 <th class="pb-3 p-3">Amount</th>
               </thead>
-              <tbody class="border border-purple-700 rounded">
-            
+              <tbody class="border border-purple-700 rounded ">
             
               </tbody>
             </table>
+         
           </div>
-        </div>
       
-        <div class="graph-box w-1/2 flex justify-center items-center" >
-          <div class="w-">
-            <canvas id="myChart"></canvas>
+        <div class="graph-box absolute  bg-purple-100 top-0 w-full right-0 h-screen flex justify-around items-center" >
+          <div class="w-2/3 relative mx-auto h-2/3">
+            <span class="absolute top-0 right-0 text-xl h-9 w-9"><i class="fa-solid fa-x"></i></span>            
+            <canvas id="myChart" class="canava h-[90%]"></canvas>
+            <p class="text-slate-500 text-center">Total Transaction Amount Ber Day For <span id="customer-span"></span></p>
           </div>
         </div>
-    </div>
+    
+  </div>
 
     <script src="./node_modules/chart.js/dist/chart.umd.js"></script>
     <script src="./node_modules/jquery/dist/jquery.min.js"></script>
@@ -80,4 +82,3 @@
   </body>
 </html>
 
-<!--  bg-slate-100 md:bg-orange-100 lg:bg-teal-200 xl:bg-sky-600 2xl:bg-yellow-200  sm:bg-red-600 -->

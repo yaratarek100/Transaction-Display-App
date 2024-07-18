@@ -1,7 +1,8 @@
-import { setChart } from "./modules/myChat.js";
+import { setChart,graphBox, tableDiv, body } from "./modules/myChat.js";
 import { filterTable, baseTable } from "./modules/myTable.js";
 
 let customerInput = document.querySelector("#customer-input");
+let xIcon = document.querySelector(".graph-box span");
 let minAmount = document.querySelector("#min");
 let maxAmount = document.querySelector("#max");
 
@@ -32,6 +33,11 @@ async function main() {
 setChart(2);
 }
 
+xIcon.addEventListener("click",()=>{
+  graphBox.style.display="none";
+  tableDiv.style.display="flex";
+  body.style.overflow="auto";
+})
 
 // table filtration
 customerInput.addEventListener("input",()=>{

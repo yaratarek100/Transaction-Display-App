@@ -19,7 +19,7 @@ export function fillTable(customerTransactions) {
     tableBody.appendChild(newRow);
 
     newRow.addEventListener("click",()=>{
-      setChart(transaction.customer_id)
+      setChart(transaction.customer_id,transaction.customer_name)
   });
 })}
 
