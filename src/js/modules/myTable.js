@@ -1,11 +1,15 @@
 import { setChart } from "./myChat.js";
 
 const tableBody = document.querySelector("tbody");
+const table = document.querySelector("table");
 
 export let newTransactionsData = [];
 
 export function fillTable(customerTransactions) {
   tableBody.innerHTML = ``;
+  if(customerTransactions==[]){
+    table.style.display="none";
+  }
 
   customerTransactions.forEach((transaction) => {
     let newRow = document.createElement("tr");
