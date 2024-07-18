@@ -29,8 +29,6 @@ async function main() {
   let transactionsData = await fetchData(myUrl + "transactions"); // id, customer-id, date, amount
   baseTable(customersData, transactionsData);
 
-//chart 
-setChart(2);
 }
 
 xIcon.addEventListener("click",()=>{

@@ -9,7 +9,7 @@ export function fillTable(customerTransactions) {
   tableBody.innerHTML = ``;
   if(customerTransactions==[]){
     table.style.display="none";
-  }
+  }else{table.style.display="block";}
 
   customerTransactions.forEach((transaction) => {
     let newRow = document.createElement("tr");
