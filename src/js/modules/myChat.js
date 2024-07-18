@@ -1,14 +1,28 @@
-export function setChart(data){
-    console.log(data);
+import { newTransactionsData } from "./myTable.js";
 const ctx = document.getElementById('myChart');
+
+
+export function setChart(customerId,customerName){
+  let dateList=[];
+  let amountList=[];
+
+  let customerTransactions = newTransactionsData.filter(
+    (t) => t.customer_id==customerId );
+customerTransactions.forEach(transaction => {
+  dateList.push(transaction.date);
+  amountList.push(transaction.amount);
+
+  
+  
+})
 
 new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    labels: dateList,
     datasets: [{
-      label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      label: `# of Amount`,
+      data: amountList,
       borderWidth: 1
     }]
   },
@@ -20,4 +34,5 @@ new Chart(ctx, {
     }
   }
 });
+
 }

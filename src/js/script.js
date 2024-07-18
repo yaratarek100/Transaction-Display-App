@@ -1,9 +1,10 @@
 import { setChart } from "./modules/myChat.js";
-import { filterByName, filterByAmount, baseTable } from "./modules/myTable.js";
+import { filterTable, baseTable } from "./modules/myTable.js";
 
 let customerInput = document.querySelector("#customer-input");
 let minAmount = document.querySelector("#min");
 let maxAmount = document.querySelector("#max");
+let tr = document.querySelectorall("tr");
 
 async function fetchData(url) {
   try {
@@ -29,41 +30,27 @@ async function main() {
   baseTable(customersData, transactionsData);
 
 //chart 
+setChart(2);
 }
 
 
 // table filtration
 customerInput.addEventListener("input",()=>{
-  filterByName(customerInput.value);
+  filterTable (minAmount.value,maxAmount.value,customerInput.value)
 })
 minAmount.addEventListener("input",()=>{
-  filterByAmount(minAmount.value,maxAmount.value);
+  filterTable (minAmount.value,maxAmount.value,customerInput.value)
 })
 maxAmount.addEventListener("input",()=>{
-  filterByAmount(minAmount.value,maxAmount.value);
+  filterTable (minAmount.value,maxAmount.value,customerInput.value)
 })
+
+tr.forEach(row => {
+  
+  row.addEventListener("click",(e)=>{
+    let c-id = e.target.id
+});
+
 
   main();
 
-
-// async function fetchData() {
-//   try {
-//     const response = await await fetch("https://api.jsonbin.io/v3/b/6696c957acd3cb34a867122b/latest", {
-//       method: "GET",
-//       headers: {
-//         "X-Master-Key": "$2a$10$MZ2x/unHrl1bm2mv9ovgHeodbEhblvxNSZfYSLRGw3PMe9eNpTof2",
-//       },
-//     });
-
-//     if (!response.ok) {
-//       throw new Error("network response was not ok." + response.statusText);
-//     }
-
-//     const data = await response.json();
-//     return data.record;
-//   } catch (error) {
-//     console.log("There was a problem with fetch the data.", error);
-//   }
-// }
-
-// let myUrl = "https://api.jsonbin.io/v3/b/6696c957acd3cb34a867122b/latest";

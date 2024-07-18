@@ -1,45 +1,45 @@
 const tableBody = document.querySelector("tbody");
-let newTransactionsData = [];
 
+export let newTransactionsData = [];
 
+export function fillTable(customerTransactions) {
+  tableBody.innerHTML = ``;
 
-export function fillTable(transaction) {
+  customerTransactions.forEach((transaction) => {
     let newRow = document.createElement("tr");
-    newRow.classList.add("p-3");
+    newRow.classList.add("border");
     newRow.innerHTML = `
-    <td>${transaction.customer_name}</td>
-                <td>${transaction.date}</td>
-                <td class="bg-orange-300">${transaction.amount}</td>`;
+        <td class="py-3 px-12 pl-16">${transaction.id}</td>
+        <td class="py-3 px-12">${transaction.customer_name}</td>
+                    <td class="py-3 px-12">${transaction.date}</td>
+                    <td class="py-3 px-12 pr-16">${transaction.amount}</td>`;
     tableBody.appendChild(newRow);
+  });
 }
 
 export function baseTable(customersData, transactionsData) {
-    tableBody.innerHTML=""
   transactionsData.forEach((transaction) => {
     let customer = customersData.find((c) => c.id == transaction.customer_id);
     transaction.customer_name = customer.name;
-fillTable(transaction);
   });
   newTransactionsData = transactionsData;
+  fillTable(newTransactionsData);
 }
 
-export function filterByName (customerName){
-    tableBody.innerHTML=""
-    let customerTransactions = newTransactionsData.filter(
-        (t) => t["customer_name"].toLowerCase().includes(customerName.toLowerCase()) );
-    customerTransactions.forEach(transaction => {
-    fillTable(transaction);
-});
+export function filterTable(min, max, name) {
+    
+  let max1 = max || 10000000000;
+  let rangeTransactions = newTransactionsData.filter(
+    (t) => max1 >= t.amount && t.amount >= min
+  );
+  filterByName(name, rangeTransactions);
 }
 
-export function filterByAmount (min,max){
-    tableBody.innerHTML=""
-    let max1=max||10000000000;
-    console.log(max1);
-let rangeTransactions = newTransactionsData.filter(
-    (t) => max1 >= t.amount && t.amount >= min);
-rangeTransactions.forEach(transaction => {
-    fillTable(transaction);
-});
-}
+export function filterByName(customerName, array) {
+  let transactionlist = array || newTransactionsData;
+  let customerTransactions = transactionlist.filter((t) =>
+    t["customer_name"].toLowerCase().includes(customerName.toLowerCase())
+  );
 
+  fillTable(customerTransactions);
+}
