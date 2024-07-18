@@ -2,6 +2,7 @@ import { setChart } from "./myChat.js";
 
 const tableBody = document.querySelector("tbody");
 const table = document.querySelector("table");
+const message = document.querySelector("#mes");
 
 
 export let newTransactionsData = [];
@@ -10,8 +11,11 @@ export function fillTable(customerTransactions) {
   tableBody.innerHTML = ``;
   if(customerTransactions.length==0){
     table.style.display="none";
+    message.style.display="block";
+    
   }else
   {table.style.display="block";
+    message.style.display="none";
   }
 
   customerTransactions.forEach((transaction) => {

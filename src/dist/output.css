@@ -805,3 +805,9 @@ tr{
     cursor: pointer;
   }
 }
+
+#mes{
+  color: rgb(190, 14, 14);
+  text-align: center;
+
+}
